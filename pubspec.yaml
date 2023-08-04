@@ -1,0 +1,58 @@
+name: asset_transformers_test
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  vector_graphics: ^1.1.7
+  vector_graphics_compiler: ^1.1.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  blur_transformer:
+    path: ./transformers/blur_transformer
+  grayscale_transformer:
+    path: ./transformers/grayscale_transformer
+  vector_graphics_transformer:
+    path: ./transformers/vector_graphics_transformer
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # assets:
+  #   - group:
+  #     - assets/puppy.png
+  #     transformers:
+  #      - package: grayscale_transformer
+  #      - package: blur_transformer
+  #   - group:
+  #      - assets/svg.svg
+  #     transformers:
+  #      - package: vector_graphics_transformer
+
+  assets:
+    - assets/sparrow.jpeg
+    - assets/svg.svg
+
+  asset-transformers:
+    - package: blur_transformer
+      assets:
+        - 'assets/*.jpeg'
+      args: --radius=20
+    - package: grayscale_transformer
+      assets:
+        - 'assets/*.jpeg'
+    - package: vector_graphics_transformer
+      assets:
+        - 'assets/*.svg'

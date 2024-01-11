@@ -5,3 +5,5 @@ A flutter project for testing the recently-proposed asset transformation feature
 ## Getting Started
 
 This repo uses locally defines packages as asset transformers. See the pubspec for asset transformer setup.
+
+This repository uses royalty-free images.

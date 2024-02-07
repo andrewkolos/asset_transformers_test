@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  dependency_with_assets:
+    path: ./dependency_with_assets
   cupertino_icons: ^1.0.2
   vector_graphics: ^1.1.7
   vector_graphics_compiler: ^1.1.7
@@ -30,17 +32,10 @@ flutter:
   uses-material-design: true
   
   assets:
-    - assets/sparrow.jpeg
-    - assets/svg.svg
-
-  asset-transformers:
-    - package: blur_transformer
-      assets:
-        - "assets/*.jpeg"
-      args: --radius=20
-    - package: grayscale_transformer
-      assets:
-        - "assets/*.jpeg"
-    - package: vector_graphics_transformer
-      assets:
-        - "assets/*.svg"
+    - path: assets/sparrow.jpeg
+      transformers:
+        - package: grayscale_transformer
+        - package: blur_transformer
+    - path: assets/svg.svg
+      transformers:
+        - package: vector_graphics_transformer

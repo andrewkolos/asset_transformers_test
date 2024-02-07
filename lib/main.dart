@@ -1,3 +1,4 @@
+import 'package:dependency_with_assets/dependency_with_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
@@ -77,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
           child: Column(
             children: [
+              const WidgetFromDependencyDependentOnAsset(),
               Expanded(child: Image.asset('assets/sparrow.jpeg')),
               const Expanded(
                   child: VectorGraphic(

@@ -15,7 +15,8 @@ void main(List<String> arguments) {
     ..addOption(radius, mandatory: false, abbr: 'r');
 
   ArgResults argResults = parser.parse(arguments);
-  _transform(argResults[input], argResults[output], int.parse(argResults[radius]));
+  print(argResults);
+  _transform(argResults[input], argResults[output], int.parse(argResults[radius] ?? '25'));
 }
 
 _transform(String input, String output, int radius) {

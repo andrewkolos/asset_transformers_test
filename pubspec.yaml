@@ -30,12 +30,11 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  
   assets:
     - path: assets/sparrow.jpeg
       transformers:
-        - package: grayscale_transformer
         - package: blur_transformer
+        - package: grayscale_transformer
     - path: assets/svg.svg
       transformers:
-        - package: vector_graphics_transformer
+        - package: vector_graphics_compiler
